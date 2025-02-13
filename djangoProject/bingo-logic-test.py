@@ -30,18 +30,23 @@ def checkWin(board):
     # Check Rows
     for i in range(4):
         if all(board[i][j][1] for j in range(4)):
-           return True
+            print("Bingo By Row!")
+            return True
 
     # Check Cols
     for i in range(4):
         if all(board[j][i][1] for j in range(4)):
-           return True
+            print("Bingo by Col!")
+            return True
 
-    # Check Diagonal
+    # Check Leading Diagonal
     if all(board[i][i][1] for i in range(4)):
+        print("Bingo by leading diag!")
         return True
 
+    # Check Anti-Diagonal
     if all(board[i][3 - i][1] for i in range(4)):
+        print("Bingo by anti diag!")
         return True
 
     return False
