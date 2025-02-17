@@ -51,3 +51,26 @@ Date: 10/02/2025
 - Have an initial basic database with password hashing to store user data
 - Created multiple django apps to allow for the creation of features
 - Database hashing system complies with the GDPR requirements
+
+### Session 3 
+Date: 17/10/2025
+- Planned Presentation
+   - Intro
+     - Introduce each member
+     - Basic concept of the game
+   - Aspects of gamification
+     - Login system
+        - GDPR
+        - Hashing
+        - T&C
+        - forgotten password
+        - Account deletion
+     - Home page
+        - 4 aspects of sustainability 
+     - Bingo board
+        - Quiz
+   - Live demo
+     - Go to home page
+     - Login
+     - Expain forgot password
+     - Go to bingo board
