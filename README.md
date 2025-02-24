@@ -84,3 +84,4 @@ Attendance: Archie Margetson, Will Davies, Samuel Hart, Adam Brooks, Barna Arany
 - Check progress on each branch to see current state of project
 - Assess current unit tests and made decision to create more
 - Create Development branch used for merging current django app prototype
+- 
