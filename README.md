@@ -42,6 +42,7 @@ Date: 07/02/2025
 
 ### Session 2
 Date: 10/02/2025
+Attendance: Archie Margetson, Will Davies, Yoav Shimoni, Dylan Profit, Samuel Hart, Adam Brooks, Barna Aranyi
 - Reflected on initial feedback from drop-in sprint meeting and took action
 - We created roles and assigned initial tasks to indivudals based on strengths
 - Created and assigned branches to allow users to contribute on their own
@@ -54,6 +55,7 @@ Date: 10/02/2025
 
 ### Session 3
 Date: 10/02/2025
+Attendance: Archie Margetson, Will Davies, Yoav Shimoni, Dylan Profit, Samuel Hart, Adam Brooks, Barna Aranyi
 - Designing slide show presentation
 - Dividing up roles and what to say for the presentation
 - Reviewing progress made in different branches
@@ -83,6 +85,7 @@ Date: 10/02/2025
 
 ### Session 4
 Date: 22/02/2025
+Attendance: Archie Margetson, Will Davies, Samuel Hart, Adam Brooks, Barna Aranyi
 - Evaluate the requirement brief for the sprint 1 submission
 - Check progress on each branch to see current state of project
 - Assess current unit tests and made decision to create more
