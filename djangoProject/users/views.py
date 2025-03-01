@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 import logging
 from .forms import ProfileUpdateForm, TCConsentForm, CustomSignUpForm
-from .models import UserProfile
+from .models import UserProfile, LeafcoinTransaction
 
 
 from django.contrib.auth.forms import UserCreationForm

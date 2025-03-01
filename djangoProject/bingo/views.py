@@ -2,10 +2,17 @@
 
 from django.shortcuts import render
 import random
+from django.contrib.auth.decorators import login_required
+from users.models import UserProfile, LeafcoinTransaction
 # Create your views here.
 
+@login_required
 def bingo_view(request):
     board = make_board(rows=5, cols=5)
+    
+    if checkBingo(board):
+        reward_leafcoins(request.user)
+
     return render(request, 'bingo.html', {'board': board})
 
 # Returns generated board variable with random integer values
@@ -46,4 +53,12 @@ def checkBingo(board):
         return True
 
     return False
+
+def reward_leafcoins(user):
+    # Award Leafcoins when a user completes a bingo tile
+    profile, created = UserProfile.objects.get_or_create(user=user)
+    reward_amount = 1
+    profile.leafcoins += reward_amount
+    profile.save()
+    LeafcoinTransaction.objects.create(user=user, amount=reward_amount, reason="Completed Bingo Tile")
 
