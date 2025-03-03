@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "home",
     "game1",
     "bingo",
+    "garden",
 ]
 
 
