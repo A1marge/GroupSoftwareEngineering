@@ -20,7 +20,7 @@ def make_board(rows,cols):
     for i in range(0,4):
         for j in range(0,4):
             challenge = numbers.pop()
-            board[i][j] = {"status": bool(random.getrandbits(1)), "challenge": "Challenge "+str(challenge), "url": "/game" +str(challenge)+"/"}
+            board[i][j] = {"status": bool(random.getrandbits(1)), "challenge": str(challenge), "url": "/game" +str(challenge)+"/"}
 
     return board
 
@@ -47,3 +47,20 @@ def checkBingo(board):
 
     return False
 
+# Marks the square with the given ID on the given board. Returns board.
+def markSquare(board, squareID):
+    # Invalid ID
+    if(squareID > 16 or squareID < 1):
+        return board
+
+    # Find square with provided ID
+    for i in range(0,4):
+        for j in range(0,4):
+            challenge = board[i][j]["challenge"]
+            if(challenge == squareID):
+                # Square Found!
+                board[i][j]["status"] == 1
+                return board
+
+    # Square was not found.
+    return board

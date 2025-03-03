@@ -26,6 +26,9 @@
                 {% for cell in row %}
                 <td class="{% if cell.status == 1 %}complete{% else %}incomplete{% endif %}" data-value="{{ cell.challenge }}">
                     <a class = cell href="{{cell.url}}">
+                        <!-- I removed the "Challenge" text from the variable, instead it will just be the integer
+                         representing the ID of the challenge. This makes the backend a bit easier.-->
+                        <p>Challenge&nbsp;</p>
                         {{ cell.challenge }}
                     </a>
                 </td>
