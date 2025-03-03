@@ -18,8 +18,32 @@
                     </div>
                     <div class="card-body">
                         {% if form.errors %}
-                            <p style="color: red;">Please correct the error{% if form.errors|length > 1 %}s{% endif %} below.</p>
+                        <p style="color: red;">Please correct the error{% if form.errors|length > 1 %}s{% endif %} below.</p>
+                        
+                        <!-- Loop through each field's errors -->
+                        {% for field in form %}
+                            {% if field.errors %}
+                                <div>
+                                    <strong>{{ field.label }}:</strong>
+                                    <ul style="color: red;">
+                                        {% for error in field.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        <!-- Optionally display non-field errors if needed, excluding '__all__' -->
+                        {% if form.non_field_errors %}
+                            <ul style="color: red;">
+                                {% for error in form.non_field_errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
                         {% endif %}
+                    {% endif %}
+                    
                         <form method="post">
                             {% csrf_token %}
                             <div class="form-group">
