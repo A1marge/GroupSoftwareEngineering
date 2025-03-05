@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="">
+            <img src="static/images/home-image.png" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links">
+            <a href="{% url 'login' %}">Log in</a>
+            <a href="bingo/">Play</a>
+            <a href="page3.html">Garden</a>
+            <a href="page4.html">Contact Us</a>
+        </div>
+    </nav>
+<br><br><br>
+<div class="opening">
+    <h1>Sustainablity Quiz</h1>
+    <label>Please read https://www.exeter.ac.uk/about/sustainability/ and answer the following questions:</label><br><br>
+    <form method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+            <label for="question_{{ forloop.counter }}"> {{ question.text }} </label><br>
+            <input type="text" id="question_{{ forloop.counter0 }}" name="question_{{ forloop.counter0 }}" required><br><br>
+        {% endfor %}
+        <button type="submit">Check Answers</button>
+	</form>
+
+</div>
+<br><br><br><br><br><br>
+<section class="footer">
+	<p> @ Copyright 2025. All rights reserved. </p>
+</section>
+</body>
+</html>
