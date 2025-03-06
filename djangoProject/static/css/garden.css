@@ -1,0 +1,163 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ABCB3A;
+    margin: 0;
+    padding-top: 90px;
+}
+
+.logo {
+    width: 80px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: green;
+    padding: 2px 4px;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    height: 90px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.plant-inv {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 110px;
+    right: 0;
+    background-color: rgb(23, 143, 23);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 2;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.plant-inv a {
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #ffffff;
+    display: block;
+    font-family: "Tahoma", sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+.plant-inv a:hover {
+    color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.plant-inv .closebutton {
+    position: absolute;
+    top: 0;
+    right: 25px;
+}
+
+.openbutton {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 5px;
+    position: fixed;
+    font-family: "Tahoma", sans-serif;
+    font-weight: bold;
+    top: 110px;
+    right: 10px;
+    z-index: 1;
+}
+
+.openbutton:hover {
+    background-color: rgb(1, 100, 1);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.plant-inv-content {
+    display: none;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    font-family: "Tahoma", sans-serif;
+}
+
+.plant-inv-content.active {
+    display: block;
+}
+
+.plant-inv-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 2vw;
+}
+
+.plant-inv-buttons a:hover {
+    background-color: rgba(0, 128, 0, 0.877);
+}
+
+.plant-inv-buttons a.active {
+    background-color: rgba(0, 128, 0, 0.877);
+    border-radius: 5px;
+}
+
+.plant-inv-content button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Tahoma", sans-serif;
+    font-size: 16px;
+}
+
+.plant-inv-content button:hover {
+    background-color: rgb(1, 100, 1);
+}
+
+.plant-inv-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.plant-inv-content ul li {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plant-inv-content ul li .quantity {
+    background-color: rgba(0, 0, 0, 0.123);
+    padding: 7px 7px;
+    border-radius: 5px;
+}

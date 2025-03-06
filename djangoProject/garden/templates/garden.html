@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/garden.css' %}">
+    <title>Garden</title>
+
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="{% static 'images/home-image.png' %}" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links">
+            <a href="account.html">Account</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <div id="plant-inv-element" class="plant-inv">
+        <a href="#" class="closebutton" onclick="closePlants()"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+        <div class="plant-inv-buttons">
+            <a href="#" class="tabs" onclick="openTab(event, 'shop')">Shop</a>
+            <a href="#" class="tabs" onclick="openTab(event, 'inventory')">Inventory</a>
+        </div>
+
+        <div id="shop" class="plant-inv-content">
+            <button onclick="purchasePlant('Plant 1')">Buy Plant 1</button>
+
+            <button onclick="purchasePlant('Plant 2')">Buy Plant 2</button>
+        </div>
+
+        <div id="inventory" class="plant-inv-content">
+            <ul id="inventoryList"></ul>
+        </div>
+    </div>
+
+    <button class="openbutton" onclick="openPlants()">Plant Inventory</button>
+
+    <h1>Garden Here</h1>
+
+    <script>
+        function openPlants() {
+            document.getElementById("plant-inv-element").style.width = "20vw";
+        }
+
+        function closePlants() {
+            document.getElementById("plant-inv-element").style.width = "0";
+        }
+
+        function openTab(event, tab) {
+            var tabcontent = Array.from(document.getElementsByClassName("plant-inv-content"));
+            tabcontent.map(content => content.style.display = "none");
+
+            var tabs = Array.from(document.getElementsByClassName("tabs"));
+            /* Sets the background colour of the tab to default */
+            tabs.map(tab => tab.className = tab.className.replace(" active", ""));
+
+            document.getElementById(tab).style.display = "block";
+            /* Sets the background colour of the tab to active */
+            event.currentTarget.className += " active";
+        }
+
+        function purchasePlant(plant) {
+            var inventoryList = document.getElementById("inventoryList");
+            var item = inventoryList.querySelector(`li[item="${plant}"]`);
+            if (item) {
+                var quantity = parseInt(item.getAttribute('amount')) + 1;
+                item.setAttribute('amount', quantity);
+                item.querySelector('.quantity').textContent = `x${quantity}`;
+            } else {
+                item = document.createElement("li");
+                item.setAttribute('item', plant);
+                item.setAttribute('amount', 1);
+                item.innerHTML = `${plant} <span class="quantity">x1</span>`;
+                item.addEventListener('click', function() {
+                    /* Do thing when item in inventory is clicked */
+                });
+                inventoryList.appendChild(item);
+            }
+        }
+    </script>
+</body>
+</html>
