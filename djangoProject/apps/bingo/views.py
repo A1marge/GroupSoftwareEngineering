@@ -5,8 +5,27 @@ import random
 # Create your views here.
 
 def bingo_view(request):
-    board = make_board(rows=5, cols=5)
-    return render(request, 'bingo.html', {'board': board})
+    # Try to get user's board
+    board = getBoard(0)
+    print(request.user)
+
+    if(board == False):
+        # If the user doesn't have one, generate a new one
+        print("No board found, generating new one")
+        board = newUser()
+
+        # Save board
+        request.session["board_layout"] = board
+
+    # Check for bingo
+    
+    bingo = False
+    if(checkBingo(board)):
+        bingo = True
+
+    # Save board to database
+    
+    return render(request, 'bingo.html', {'board': board, 'bingo': bingo})
 
 # Returns generated board variable with random integer values
 # 4x4
@@ -23,6 +42,10 @@ def make_board(rows,cols):
             board[i][j] = {"status": False, "challenge": challenge, "url": "/games/game" +str(challenge)+"/"}
 
     return board
+
+def newUser():
+    # Create popup with info about game
+    return make_board(rows=5, cols=5)
 
 # Checks the provided board for bingos. Returns True if bingo, False otherwise.
 def checkBingo(board):
@@ -64,3 +87,7 @@ def markSquare(board, squareID):
 
     # Square was not found.
     return board
+
+# Gets the stored board from the user ID. If no board is stored, returns False.
+def getBoard(userID):
+    return False
