@@ -1,4 +1,4 @@
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import JsonResponse
@@ -10,6 +10,20 @@ from .models import UserProfile
 
 from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
+
+
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)  # This sets the session cookie automatically
+            return redirect('profile')  # or wherever you want to redirect after login
+        else:
+            messages.error(request, "Invalid username or password.")
+    return render(request, 'users/templates/registration/login.html')
+
 
 @login_required
 def delete_account(request):
@@ -27,11 +41,14 @@ def signup(request):
             # Save GDPR consent
             UserProfile.objects.create(user=user, tc_consent=form.cleaned_data['tc_consent'])
             login(request, user)  # Log the user in after signup
-            return redirect('landing')  # Redirect to the landing page or another page
+            return redirect('home')  # Redirect to the landing page or another page
     else:
         form = CustomSignUpForm()
     return render(request, 'users/signup_new.html', {'form': form})
 
+
+def home(request):
+    return render(request, 'users/sustainhome.html')
 
 def landing(request):
     return render(request, 'users/landing.html')

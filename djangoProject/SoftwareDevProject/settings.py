@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "users",
     "home",
     "game1",
+    "game2",
     "bingo",
 ]
 

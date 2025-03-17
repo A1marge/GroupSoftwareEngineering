@@ -6,7 +6,7 @@ from .models import UserProfile
 
 
 class SignUpForm(UserCreationForm):
-    gdpr_consent = forms.BooleanField(
+    tc_consent = forms.BooleanField(
         required=True,
         label="I agree to the processing of my personal data in accordance with the GDPR.",
         help_text="You must agree to our terms to create an account."
@@ -14,7 +14,7 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2', 'gdpr_consent')
+        fields = ('username', 'email', 'password1', 'password2', 'tc_consent')
 
 
 class ProfileUpdateForm(forms.ModelForm):

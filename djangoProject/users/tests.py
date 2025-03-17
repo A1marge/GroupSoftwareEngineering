@@ -35,7 +35,7 @@ class SignUpViewTest(TestCase):
             'email': 'invalid-email',
             'password1': 'pass',
             'password2': 'mismatch',
-            'gdpr_consent': False
+            'tc_consent': False
         })
         self.assertEqual(response.status_code, 200)  # Should stay on same page
         self.assertFalse(get_user_model().objects.filter(username='short').exists())  # No user created
