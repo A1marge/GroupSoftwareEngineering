@@ -33,7 +33,7 @@ def make_board(rows,cols):
     for i in range(0,4):
         for j in range(0,4):
             challenge = numbers.pop()
-            board[i][j] = {"status": bool(random.getrandbits(1)), "challenge": str(challenge), "url": "/game" +str(challenge)+"/"}
+            board[i][j] = {"status": False, "challenge": str(challenge), "url": "/game" +str(challenge)+"/"}
 
     return board
 
