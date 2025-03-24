@@ -1,0 +1,14 @@
+Must-Have Requirements
+* Bingo board and required games
+* Currency and loot boxes
+* Garden
+Should-Have Requirements
+* Friend and profile systems
+* Stock market
+* Levels and battlepass
+Could-Have Requirements
+* City builder
+* Crafting 
+Won’t-Have Requirements
+* Farm
+* Climate duels

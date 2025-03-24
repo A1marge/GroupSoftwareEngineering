@@ -1,0 +1,44 @@
+Humble Mango Farmers - User Guide
+Welcome to Humble Mango Farmers! This guide will help you log in and complete challenges
+
+Registration
+1. Click on the **Sign Up** button on the homepage.
+2. Enter your required details (username, email, password, etc.).
+3. Log in using your credentials.
+
+Features
+You can navigate to these features using the navigation bar.
+
+Bingo Board
+- Play various sustainability games and tasks to clear squares.
+- Make a bingo line to earn coins
+
+Experience & Levels
+- Earn XP by completing games and tasks.
+- Your XP progress bar updates as you gain experience.
+
+Battle Pass
+- If you have an active **Battle Pass**, you can track its progress.
+- Unlock rewards by completing sustainability tasks and progress through the pass.
+
+Currency
+- Earn coins through the bingo board and other games.
+- Use coins for in-game purchases.
+
+Garden
+- Complete bingo games to buy seeds.
+- Plant seeds in the garden and wait for them to grow.
+
+
+Main Games and Features
+- Stock Market: Trade in the in-game stock system.
+- Loot boxes: Open lootboxes for items.
+- Farm Builder: Manage your virtual farm.
+- City Builder: Engage in city-building activities.
+
+Bingo Minigames
+- Quiz
+- Recycling Sorting
+- GPS checker
+- Recycling catching game
+- Card matching
