@@ -117,6 +117,7 @@ Date: 10/03/2025
 - Updated login system to stay logged in
 - Required login to access board and other parts
 - Added a currancy system
+- Finished bingo squares
 
 ##Session 8
 Date: 14/03/2025
