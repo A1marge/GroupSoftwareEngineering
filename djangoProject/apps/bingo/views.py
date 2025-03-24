@@ -108,4 +108,5 @@ def markSquare(challengeID, user_profile):
                 user_profile.save()
                 return
     
-    print(f"Challenge '{challengeID}' not found on the board.")  # Debugging message
+    print(f"Challenge '{challengeID}' not found on the board.")
+    # Debug

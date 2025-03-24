@@ -84,10 +84,30 @@ def video2(request):
     markSquare("11", UserProfile.objects.get(user=request.user))
     return render(request, 'games/video2.html')
 
-# Game 12 : Article
+# Game 12 : Article1
 def article1(request):
     markSquare("12", UserProfile.objects.get(user=request.user))
     return render(request, 'games/article1.html')
+
+# Game 13 : Article2
+def article2(request):
+    markSquare("13", UserProfile.objects.get(user=request.user))
+    return render(request, 'games/article2.html')
+
+# Game 14 : Article3
+def article3(request):
+    markSquare("14", UserProfile.objects.get(user=request.user))
+    return render(request, 'games/article3.html')
+
+# Game 15 : Article4
+def article4(request):
+    markSquare("15", UserProfile.objects.get(user=request.user))
+    return render(request, 'games/article4.html')
+
+# Game 16 : Article5
+def article5(request):
+    markSquare("16", UserProfile.objects.get(user=request.user))
+    return render(request, 'games/article5.html')
 
 
 #@login_required

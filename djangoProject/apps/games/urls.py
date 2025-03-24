@@ -14,5 +14,9 @@ urlpatterns = [
     path('game10/', video1, name='video1'),
     path('game11/', video2, name='video2'),
     path('game12/', article1, name='article1'),
+    path('game13/', article2, name='article2'),
+    path('game14/', article3, name='article3'),
+    path('game15/', article4, name='article4'),
+    path('game16/', article5, name='article5'),
     path("mark-square/", mark_square_ajax, name="mark_square_ajax"), 
 ]
