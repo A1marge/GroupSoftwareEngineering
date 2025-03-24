@@ -15,13 +15,6 @@ class UserProfile(models.Model):
     total_garden_plants = models.PositiveIntegerField(default=0)
     most_used_garden_crop = models.CharField(max_length=50, blank=True)
 
-    # 🎰 Casino stats
-    total_casino_games_played = models.PositiveIntegerField(default=0)
-    total_casino_wagered = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'))
-    total_casino_green_bets = models.PositiveIntegerField(default=0)
-    total_casino_green_fund_donated = models.DecimalField(max_digits=12, decimal_places=2, default=Decimal('0.00'))
-    total_casino_wins = models.PositiveIntegerField(default=0)
-
     # 🧪 Crafting stats
     total_items_crafted = models.PositiveIntegerField(default=0)
     rare_items_crafted = models.PositiveIntegerField(default=0)

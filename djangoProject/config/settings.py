@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
-from apps import casino
-from apps.casino.context_processors import green_fund_context
-
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = Path(__file__).resolve().parent.parent  # Converts BASE_DIR to a Path object
 
@@ -40,7 +37,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "apps.casino",
     "apps.users",
     "apps.home",
     "apps.bingo",
@@ -80,7 +76,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'apps.casino.context_processors.green_fund_context',
             ],
         },
     },
