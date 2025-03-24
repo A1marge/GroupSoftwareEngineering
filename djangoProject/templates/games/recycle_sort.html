@@ -136,15 +136,45 @@
     let timer;
 
     const wasteItems = [
-      { name: 'Plastic Bottle', type: 'plastic' },
-      { name: 'Newspaper', type: 'paper' },
-      { name: 'Soda Can', type: 'metal' },
-      { name: 'Banana Peel', type: 'organic' },
-      { name: 'Glass Jar', type: 'glass' },
-      { name: 'Cardboard Box', type: 'paper' },
-      { name: 'Aluminum Foil', type: 'metal' },
-      { name: 'Apple Core', type: 'organic' }
-    ];
+  { name: 'Plastic Bottle', type: 'plastic' },
+  { name: 'Newspaper', type: 'paper' },
+  { name: 'Soda Can', type: 'metal' },
+  { name: 'Banana Peel', type: 'organic' },
+  { name: 'Glass Jar', type: 'glass' },
+  { name: 'Cardboard Box', type: 'paper' },
+  { name: 'Aluminum Foil', type: 'metal' },
+  { name: 'Apple Core', type: 'organic' },
+  { name: 'Milk Carton', type: 'paper' },
+  { name: 'Yogurt Cup', type: 'plastic' },
+  { name: 'Eggshells', type: 'organic' },
+  { name: 'Tin Can', type: 'metal' },
+  { name: 'Broken Mirror', type: 'glass' },
+  { name: 'Magazine', type: 'paper' },
+  { name: 'Bubble Wrap', type: 'plastic' },
+  { name: 'Tea Bag', type: 'organic' },
+  { name: 'Wine Bottle', type: 'glass' },
+  { name: 'Steel Fork', type: 'metal' },
+  { name: 'Paper Cup', type: 'paper' },
+  { name: 'Plastic Straw', type: 'plastic' },
+  { name: 'Coconut Shell', type: 'organic' },
+  { name: 'Spray Can', type: 'metal' },
+  { name: 'Coffee Grounds', type: 'organic' },
+  { name: 'Plastic Grocery Bag', type: 'plastic' },
+  { name: 'Mirror Shards', type: 'glass' },
+  { name: 'Styrofoam Cup', type: 'plastic' },
+  { name: 'Notebook', type: 'paper' },
+  { name: 'Orange Peel', type: 'organic' },
+  { name: 'Ceramic Plate', type: 'glass' },
+  { name: 'Light Bulb', type: 'glass' },
+  { name: 'Receipts', type: 'paper' },
+  { name: 'Corn Husk', type: 'organic' },
+  { name: 'Disposable Razor', type: 'metal' },
+  { name: 'Sponge', type: 'plastic' },
+  { name: 'Plastic Cutlery', type: 'plastic' },
+  { name: 'Glass Perfume Bottle', type: 'glass' },
+  { name: 'Metal Coat Hanger', type: 'metal' }
+];
+
 
     function getRandomWasteItem() {
       const randomIndex = Math.floor(Math.random() * wasteItems.length);

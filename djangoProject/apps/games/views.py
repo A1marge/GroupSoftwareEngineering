@@ -5,7 +5,7 @@ from ..users.models import UserProfile
 from django.http import JsonResponse
 import json
 
-# Game 1
+# Game 1 : QUIZ
 def quiz_view(request):
     # Set of questions for the quiz
     questions = [
@@ -42,34 +42,43 @@ def quiz_view(request):
     return render(request, 'games/quiz.html', {'questions': questions})
 
 
-# Game 2
+# Game 2 : RECYCLE SORT
 def recycle_sort(request):
     return render(request, 'games/recycle_sort.html')
 
-# Game 3
+# Game 3 : ECO RUNNER
 def eco_runner(request):
     return render(request, 'games/eco_runner.html')
 
-# Game 4
+# Game 4 : ECO MATCH
 def eco_memory(request):
     return render(request, 'games/eco_memory.html')
 
 
-#game 5
+#game 5 : GPS 1
 def gps_game(request):
     return render(request, 'games/gps_game.html')
 
+#game 6 : GPS 2
 def gps_game2(request):
     return render(request, 'games/gps_game2.html')
 
+# Game 7 : GPS 3
 def gps_game3(request):
     return render(request, 'games/gps_game3.html')
 
+# Game 8 : GPS 4
 def gps_game4(request):
     return render(request, 'games/gps_game4.html')
 
+# Game 9 : GPS 5
 def gps_game5(request):
     return render(request, 'games/gps_game5.html')
+
+# Game 10 : Youtube Video
+def video1(request):
+    markSquare("10", UserProfile.objects.get(user=request.user))
+    return render(request, 'games/video1.html')
 
 #@login_required
 def mark_square_ajax(request):
