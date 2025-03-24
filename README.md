@@ -111,14 +111,14 @@ Date: 03/03/2025
 - Created new Github branches for each feature
 - Created new Django apps.
 
-##Session 7
+## Session 7
 Date: 10/03/2025
 - Restructured app files
 - Updated login system to stay logged in
 - Required login to access board and other parts
 - Added a currancy system
 
-##Session 8
+## Session 8
 Date: 14/03/2025
 - Created garden app
 - Created the crates system with a shop to buy different levels of crates
@@ -126,7 +126,7 @@ Date: 14/03/2025
 - Battle pass and rewards system was added
 - Crafting system and recipes
 
-##Session 9
+## Session 9
 Date 20/03/2025
 - City builder
 - Standardised the website styling
