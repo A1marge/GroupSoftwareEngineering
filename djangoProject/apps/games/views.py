@@ -54,7 +54,6 @@ def eco_runner(request):
 def eco_memory(request):
     return render(request, 'games/eco_memory.html')
 
-
 #game 5 : GPS 1
 def gps_game(request):
     return render(request, 'games/gps_game.html')
@@ -84,6 +83,12 @@ def video1(request):
 def video2(request):
     markSquare("11", UserProfile.objects.get(user=request.user))
     return render(request, 'games/video2.html')
+
+# Game 12 : Article
+def article1(request):
+    markSquare("12", UserProfile.objects.get(user=request.user))
+    return render(request, 'games/article1.html')
+
 
 #@login_required
 def mark_square_ajax(request):
