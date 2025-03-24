@@ -75,17 +75,21 @@ def gps_game4(request):
 def gps_game5(request):
     return render(request, 'games/gps_game5.html')
 
-# Game 10 : Youtube Video
+# Game 10 : Youtube Video 1
 def video1(request):
     markSquare("10", UserProfile.objects.get(user=request.user))
     return render(request, 'games/video1.html')
+
+# Game 11 : Youtube Video
+def video2(request):
+    markSquare("11", UserProfile.objects.get(user=request.user))
+    return render(request, 'games/video2.html')
 
 #@login_required
 def mark_square_ajax(request):
     """
     Marks a bingo square based on the challenge name provided in the request.
     """
-    print("Got here")
     if request.method == "POST":
         try:
             data = json.loads(request.body)  # Get JSON data from the request

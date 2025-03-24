@@ -34,7 +34,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Congratulations! You completed a Bingo. You have earned 20 xp and increased 50 coins!.</p>
+        <p>Congratulations! You completed a Bingo. You have earned 55 xp and 50 coins!.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" onclick="location.reload()">Play Again</button>
@@ -48,7 +48,7 @@
 {% block extra_js %}
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-      var bingo = "{{ bingo|lower }}"; // Convert Django boolean to JavaScript boolean
+      var bingo = "{{ bingo|lower }}";
       if (bingo === "true") {
           var myModal = new bootstrap.Modal(document.getElementById('bingoModal'), {});
           myModal.show();

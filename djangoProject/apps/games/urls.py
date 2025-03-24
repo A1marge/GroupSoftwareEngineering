@@ -12,5 +12,6 @@ urlpatterns = [
     path('game8/', gps_game4, name='gps_game4'),
     path('game9/', gps_game5, name='gps_game5'),
     path('game10/', video1, name='video1'),
+    path('game11/', video2, name='video2'),
     path("mark-square/", mark_square_ajax, name="mark_square_ajax"), 
 ]

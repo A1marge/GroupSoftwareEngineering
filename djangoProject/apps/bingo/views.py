@@ -3,6 +3,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from ..users.models import UserProfile
+from ..users.utils import add_xp
 import random
 # Create your views here.
 
@@ -31,7 +32,7 @@ def bingo_view(request):
     bingo = checkBingo(board)
     if(bingo):
             user_profile.add_currency(20)
-            user_profile.add_experience(50)
+            add_xp(request.user, 55)
             # Generate New Board
             board = newUser()
             user_profile.bingo_board = board
