@@ -247,7 +247,6 @@ def my_stats_view(request):
     from apps.garden.models import GardenPlant
     from apps.crafting.models import CraftingLog
     from apps.climate_duels.models import DuelTurn
-    from apps.casino.models import DiceGame, BlackjackGame, RouletteGame
 
     profile = request.user.userprofile
     stats = profile.get_stats()
@@ -290,15 +289,6 @@ def my_stats_view(request):
         for turn in DuelTurn.objects.filter(player=profile.user)
     )
 
-    # Casino Stats
-    dice_games = DiceGame.objects.filter(user=profile.user)
-    bj_games = BlackjackGame.objects.filter(user=profile.user)
-    roulette_games = RouletteGame.objects.filter(user=profile.user)
-    all_games = list(dice_games) + list(bj_games) + list(roulette_games)
-    stats["total_casino_games_played"] = len(all_games)
-    stats["total_casino_wagered"] = sum(g.bet_amount for g in all_games)
-    stats["total_casino_wins"] = sum(1 for g in all_games if getattr(g, 'win', False) or getattr(g, 'result', '') == "win")
-
     return render(request, "users/my_stats.html", {
         "profile": profile,
         "stats": stats,
@@ -315,7 +305,6 @@ def friend_stats_view(request, username):
     from apps.garden.models import GardenPlant
     from apps.crafting.models import CraftingLog
     from apps.climate_duels.models import DuelTurn
-    from apps.casino.models import DiceGame, BlackjackGame, RouletteGame
 
     friend_user = get_object_or_404(User, username=username)
     friend_profile = friend_user.userprofile
@@ -359,14 +348,6 @@ def friend_stats_view(request, username):
             for turn in DuelTurn.objects.filter(player=friend_user)
         )
 
-        # Casino Stats
-        dice_games = DiceGame.objects.filter(user=friend_user)
-        bj_games = BlackjackGame.objects.filter(user=friend_user)
-        roulette_games = RouletteGame.objects.filter(user=friend_user)
-        all_games = list(dice_games) + list(bj_games) + list(roulette_games)
-        stats["total_casino_games_played"] = len(all_games)
-        stats["total_casino_wagered"] = sum(g.bet_amount for g in all_games)
-        stats["total_casino_wins"] = sum(1 for g in all_games if getattr(g, 'win', False) or getattr(g, 'result', '') == "win")
 
 
         return render(request, "users/friend_stats.html", {
